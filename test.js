@@ -2,7 +2,12 @@
 
 'use strict'
 
-const lektura = require('./lektura')
+let lektura = []
+
+for (let i = 2; process.argv[i] != undefined; i++) {
+    lektura.push(process.argv[i])
+}
+
 const biblia = require('./biblia')
 
 const now = new Date()
@@ -11,7 +16,7 @@ const today = [
     String(now.getDate()).padStart(2, "0"),
 ].join("-")
 
-const lekturaNaDzis = lektura[today]
+const lekturaNaDzis = lektura.length ? lektura : require('./lektura')[today]
 
 console.log("-------------------------------")
 console.log("Dzisiaj do przeczytania mam:")
