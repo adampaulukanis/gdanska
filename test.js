@@ -16,7 +16,7 @@ const today = [
     String(now.getDate()).padStart(2, "0"),
 ].join("-")
 
-const lekturaNaDzis = lektura.length ? lektura : require('./lektura')[today]
+const lekturaNaDzis = lektura.length ? lektura : require('./kalendarium')[today]
 
 console.log("-------------------------------")
 console.log("Dzisiaj do przeczytania mam:")
