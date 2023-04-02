@@ -16,19 +16,20 @@ const today = [
     String(now.getDate()).padStart(2, "0"),
 ].join("-")
 
-const lekturaNaDzis = lektura.length ? lektura : require('./kalendarium')[today]
+let lekturaNaDzis = lektura.length ? lektura : require('./kalendarium')[today]
+lekturaNaDzis = lekturaNaDzis.map(l => l.toUpperCase())
 
-console.log("-------------------------------")
-console.log("Dzisiaj do przeczytania mam:")
-console.log(lekturaNaDzis)
-console.log("-------------------------------")
-
-lekturaNaDzis?.forEach(ksiega => {
-    console.log(ksiega)
+lekturaNaDzis.forEach(ksiega => {
     let display = ""
-    biblia[ksiega]?.forEach((wers, i) => {
-        display += `|${i+1}| ${wers} `
-    })
+
+    for (const [key, value] of Object.entries(biblia)) {
+        if (key.toUpperCase() === ksiega) {
+            console.log(`\n${key}:\n`);
+            value.forEach((wers, i) => {
+                display += `|${i+1}| ${wers} `
+            })
+        }
+    }
+
     console.log(display)
-    console.log("-------------------------------")
 })
