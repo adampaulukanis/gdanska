@@ -28,6 +28,12 @@ lekturaNaDzis.forEach(ksiega => {
             value.forEach((wers, i) => {
                 display += `|${i+1}| ${wers} `
             })
+        } else if (ksiega.split("-")[0] === key.toUpperCase()) { // pierwsza księga
+            console.log(ksiega.split("-"))
+            console.log(`\n${key}:\n`);
+            value.forEach((wers, i) => {
+                display += `|${i+1}| ${wers} `
+            })
         }
     }
 
