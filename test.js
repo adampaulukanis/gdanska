@@ -23,17 +23,27 @@ lekturaNaDzis.forEach(ksiega => {
     let display = ""
 
     for (const [key, value] of Object.entries(biblia)) {
+        let match = null
         if (key.toUpperCase() === ksiega) {
-            console.log(`\n${key}:\n`);
+            display += `\n${key}:\n`
             value.forEach((wers, i) => {
                 display += `|${i+1}| ${wers} `
             })
-        } else if (ksiega.split("-")[0] === key.toUpperCase()) { // pierwsza księga
-            console.log(ksiega.split("-"))
-            console.log(`\n${key}:\n`);
-            value.forEach((wers, i) => {
-                display += `|${i+1}| ${wers} `
-            })
+            display += "\n"
+        } else if (match = ksiega.match(/(\w+)(\d)-(\d)/)) { // Jest cos takiego XYZ12-13
+            if (`${match[1]}${match[2]}`.toUpperCase() === key.toUpperCase()) {
+                display += `\n${key}:\n`
+                value.forEach((wers, i) => {
+                    display += `|${i+1}| ${wers} `
+                })
+                display += "\n"
+            } else if (`${match[1]}${match[3]}`.toUpperCase() === key.toUpperCase()) {
+                display += `\n${key}:\n`
+                value.forEach((wers, i) => {
+                    display += `|${i+1}| ${wers} `
+                })
+                display += "\n"
+            }
         }
     }
 
