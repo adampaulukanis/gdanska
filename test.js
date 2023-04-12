@@ -32,7 +32,7 @@ lekturaNaDzis.forEach(ksiega => {
         if (key.toUpperCase() === ksiega) {
             display += `\n${key}:\n`
             value.forEach((wers, i) => {
-                display += `|${i+1}| ${wers} `
+                display += `|${i+1}| ${wers}\n`
             })
             display += "\n"
         } else if (match = ksiega.match(/(\w+\d+)-(\d+)/)) { // Jest cos takiego XYZ12-13
