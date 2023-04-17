@@ -1,0 +1,12 @@
+{
+  "name": "parser",
+  "version": "1.0.0",
+  "description": "Simple parser for my Bible app",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test-reporter=spec parser-test.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
