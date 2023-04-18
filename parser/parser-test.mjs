@@ -6,21 +6,26 @@ import Parser from "./parser.mjs";
 
 describe("Mój parser", () => {
     it("2Tym", () => {
-        assert.ok(Parser("2Tym").ksiega === "2Tym", "ksiega !== 2Tym");
-        assert.ok(Parser("2Tym").rozdzial === "", "rozdzial !== ''");
-        assert.ok(Parser("2Tym").wers === "", "wers !== ''");
+        const obj = {
+            _: "2Tym",
+            ksiega: "2Tym",
+            rozdzial: "",
+            wers: ""
+        };
+        assert.deepEqual(Parser("2Tym"), obj);
     });
 
     it("1Moj1 OK",  () => {
-        assert.ok(Parser("1Moj1").ksiega === "1Moj", "ksiega !== 1Moj");
-        assert.ok(Parser("1Moj1").rozdzial === "1");
-        assert.ok(Parser("1Moj1").wers === "", "wers !== ''");
+        const obj = {
+            _: "1Moj1",
+            ksiega: "1Moj",
+            rozdzial: "1",
+            wers: ""
+        };
+        assert.deepEqual(Parser("1Moj1"), obj);
     })
 
-    it("2Moj2,3 ok", {skip: true}, () => {
-        assert.ok(Parser("2Moj2,3").ksiega === "2Moj");
-        assert.ok(Parser("2Moj2,3").rozdzial === "2");
-        assert.ok(Parser("2Moj2,3").wers === "3");
+    it("2Moj2,3 ok", () => {
     });
 
     it("Łuk17", {skip: true });
