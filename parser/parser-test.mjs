@@ -50,6 +50,14 @@ describe("Mój parser", () => {
         assert.deepEqual(Parser("Joz12-15"), obj);
     });
 
-    it("Łuk12,5-9", {skip: true });
+    it("Łuk12,5-9", { skip: true }, () => {
+        const obj = {
+            _: "Łuk12,5-9",
+            rozdzialy: [ "Łuk12" ],
+            wersy: [ 5, 6, 7, 8, 9 ],
+        };
+        assert.deepEqual(Parser("Łuk12,5-9", true), obj);
+
+    });
     it("2Kor3,5-7", {skip: true });
 })
