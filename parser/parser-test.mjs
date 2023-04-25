@@ -38,18 +38,17 @@ describe("Mój parser", () => {
             rozdzialy: [ "Łuk13" ],
             wersy: [ "5" ],
         };
-        assert.deepEqual(Parser("Łuk13,5", true), obj);
+        assert.deepEqual(Parser("Łuk13,5"), obj);
     });
 
-    /*
     it("Joz12-15 OK", () => {
         const obj = {
             _: "Joz12-15",
-            rozdzialy: [ "Joz12", "Joz13", "Joz14", "Joz15" ]
+            rozdzialy: [ "Joz12", "Joz13", "Joz14", "Joz15" ],
+            wersy: [],
         };
         assert.deepEqual(Parser("Joz12-15"), obj);
     });
-    */
 
     it("Łuk12,5-9", {skip: true });
     it("2Kor3,5-7", {skip: true });

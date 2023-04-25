@@ -10,21 +10,27 @@
  * ]
 */
 function Parser(string, debug = false){
-    //let re = /([\p{L}\p{N}]+)(,\d)*/gu;
     let re = /^([\p{L}\p{N}]+)(-\d+)*(,\d+)*(-\d+)*/gu;
-    //let re = /^(\w+)(-\d+)*(,\d+)*(-\d+)*/gu;
     let [ _, rozdzial, rozdzialDo, wers, wersDo ] = re.exec(string);
 
-    if (debug)
-        console.log({ _, rozdzial, rozdzialDo, wers, wersDo });
-
     let rozdzialy = [ rozdzial ];
+
+    if (rozdzialDo) {
+        let nazwa = rozdzial.replace(/\d+$/, "");
+        let od = rozdzial.match(/\d+$/)[0];
+        for (let i = Number(od) + 1; i <= Number(rozdzialDo.replace("-", "")); i++) {
+            rozdzialy.push(`${nazwa}${i}`);
+        }
+    }
     let wersy = [];
 
     if (wers) {
         wers = wers.replace(",", "");
         wersy.push(wers);
     }
+
+    if (debug)
+        console.log({ debug, _, rozdzial, rozdzialDo, wers, wersDo, rozdzialy });
 
     return {
         _,
