@@ -35,25 +35,6 @@ lekturaNaDzis.forEach(ksiega => {
                 display += `|${i+1}| ${wers}\n`
             })
             display += "\n"
-        } else if (match = ksiega.match(/(\w+\d+)-(\d+)/)) { // Jest cos takiego XYZ12-13
-            console.log({ match, key })
-            if (`${match[1]}${match[2]}`.toUpperCase() === key.toUpperCase()) {
-                console.log(">>>>>>>>>>>>>>>")
-                console.log(`${match[1]}${match[2]}`.toUpperCase())
-                display += `\n${key}:\n`
-                value.forEach((wers, i) => {
-                    display += `|${i+1}| ${wers} `
-                })
-                display += "\n"
-            } else if (`${match[1]}${match[3]}`.toUpperCase() === key.toUpperCase()) {
-                console.lgo("<<<<<<<<<<<<<<<")
-                console.log(`${match[1]}${match[3]}`.toUpperCase())
-                display += `\n${key}:\n`
-                value.forEach((wers, i) => {
-                    display += `|${i+1}| ${wers} `
-                })
-                display += "\n"
-            } 
         }
     }
 
