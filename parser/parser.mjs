@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 /*
  * biblia.json wygląda tak:
@@ -9,34 +9,23 @@
  *      wersN
  * ]
 */
-function Parser(string, debug = false){
-    let re = /^([\p{L}\p{N}]+)(-\d+)*(,\d+)*(-\d+)*/gu;
-    let [ _, rozdzial, rozdzialDo, wers, wersDo ] = re.exec(string);
+function Parser(string){
+    let retArr = []
+    const re = /^([\p{L}\p{N}]+)(-\d+)*/gu
+    let [ _, rozdzial, wiecej ] = re.exec(string)
 
-    let rozdzialy = [ rozdzial ];
+    retArr.push(rozdzial)
 
-    if (rozdzialDo) {
-        let nazwa = rozdzial.replace(/\d+$/, "");
-        let od = rozdzial.match(/\d+$/)[0];
-        for (let i = Number(od) + 1; i <= Number(rozdzialDo.replace("-", "")); i++) {
-            rozdzialy.push(`${nazwa}${i}`);
+    if (wiecej) {
+        const nazwa = rozdzial.replace(/\d+$/, "")
+        const min = Number(rozdzial.match(/\d+$/)[0]) + 1
+        const max = Number(wiecej.replace("-", ""))
+
+        for (let i = min; i <= max; i++) {
+            retArr.push(`${nazwa}${i}`)
         }
     }
-    let wersy = [];
-
-    if (wers) {
-        wers = wers.replace(",", "");
-        wersy.push(wers);
-    }
-
-    if (debug)
-        console.log({ debug, _, rozdzial, rozdzialDo, wers, wersDo, rozdzialy });
-
-    return {
-        _,
-        rozdzialy,
-        wersy,
-    };
+    return retArr
 }
 
-export default Parser;
+export default Parser
