@@ -2,7 +2,7 @@
   "name": "parser",
   "version": "1.0.0",
   "description": "Simple parser for my Bible app",
-  "main": "index.js",
+  "main": "parser.mjs",
   "scripts": {
     "test": "node --test-reporter=spec parser-test.mjs"
   },
