@@ -2,11 +2,11 @@
   "name": "parser",
   "version": "1.0.0",
   "description": "Simple parser for my Bible app",
-  "main": "parser.mjs",
+  "main": "parser.js",
   "scripts": {
-    "test": "node --test-reporter=spec parser-test.mjs"
+    "test": "node --test-reporter=spec parser-test.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Adam Paulukanis",
   "license": "ISC"
 }

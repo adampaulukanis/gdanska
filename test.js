@@ -1,28 +1,40 @@
 #!/usr/bin/env node
 
-'use strict'
+"use strict";
 
-let lektura = []
+let lektura = [];
 
 for (let i = 2; process.argv[i] != undefined; i++) {
-    lektura.push(process.argv[i])
+    lektura.push(process.argv[i]);
 }
 
-const biblia = require('./biblia')
+const biblia = require("./biblia");
 
-const now = new Date()
+const now = new Date();
 const today = [
     String(now.getMonth() + 1).padStart(2, "0"),
     String(now.getDate()).padStart(2, "0"),
-].join("-")
+].join("-");
 
-let lekturaNaDzis = lektura.length ? lektura : require('./kalendarium')[today]
-lekturaNaDzis = lekturaNaDzis.map(l => l.toUpperCase())
+let lekturaNaDzis = lektura.length ? lektura : require("./kalendarium")[today];
 
 /* TODO:
  * Tutaj powinno rozdzielac 5Moj12-13 na cos takiego:
  * lekturaNaDzis = [ 5Moj12, 5Moj13 ]
  */
+
+const Parser = require("./parser/parser.js");
+for (const rozdzial of lekturaNaDzis) {
+    for (const czytaj of Parser(rozdzial)) {
+        console.log("--------------------------");
+        console.log(czytaj);
+        console.log("--------------------------");
+        console.log(biblia[czytaj])
+    }
+}
+
+return
+//////////////////////////////////////////
 
 lekturaNaDzis.forEach(ksiega => {
     let display = ""
