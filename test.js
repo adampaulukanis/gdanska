@@ -29,26 +29,10 @@ for (const rozdzial of lekturaNaDzis) {
         console.log("--------------------------");
         console.log(czytaj);
         console.log("--------------------------");
-        console.log(biblia[czytaj])
+
+        const wersy = biblia[czytaj];
+        wersy.forEach((wers, i) => {
+            console.log(++i, wers);
+        });
     }
 }
-
-return
-//////////////////////////////////////////
-
-lekturaNaDzis.forEach(ksiega => {
-    let display = ""
-
-    for (const [key, value] of Object.entries(biblia)) {
-        let match = null
-        if (key.toUpperCase() === ksiega) {
-            display += `\n${key}:\n`
-            value.forEach((wers, i) => {
-                display += `|${i+1}| ${wers}\n`
-            })
-            display += "\n"
-        }
-    }
-
-    console.log(display)
-})
