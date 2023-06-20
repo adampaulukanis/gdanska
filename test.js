@@ -17,7 +17,7 @@ const today = [
 ].join("-");
 
 let lekturaNaDzis = lektura.length ? lektura : require("./kalendarium")[today];
-console.log({ lekturaNaDzis, lektura });
+//console.log({ lekturaNaDzis, lektura });
 
 /* TODO:
  * Tutaj powinno rozdzielac 5Moj12-13 na cos takiego:
