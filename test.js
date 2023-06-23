@@ -17,6 +17,7 @@ const today = [
 ].join("-");
 
 let lekturaNaDzis = lektura.length ? lektura : require("./kalendarium")[today];
+//console.log({ lekturaNaDzis, lektura });
 
 /* TODO:
  * Tutaj powinno rozdzielac 5Moj12-13 na cos takiego:
@@ -29,26 +30,11 @@ for (const rozdzial of lekturaNaDzis) {
         console.log("--------------------------");
         console.log(czytaj);
         console.log("--------------------------");
-        console.log(biblia[czytaj])
+
+        const wersy = biblia[czytaj] || [ "error", czytaj, "niedostępna w biblia.json" ];
+
+        wersy.forEach((wers, i) => {
+            console.log(++i, wers);
+        });
     }
 }
-
-return
-//////////////////////////////////////////
-
-lekturaNaDzis.forEach(ksiega => {
-    let display = ""
-
-    for (const [key, value] of Object.entries(biblia)) {
-        let match = null
-        if (key.toUpperCase() === ksiega) {
-            display += `\n${key}:\n`
-            value.forEach((wers, i) => {
-                display += `|${i+1}| ${wers}\n`
-            })
-            display += "\n"
-        }
-    }
-
-    console.log(display)
-})
