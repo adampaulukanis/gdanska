@@ -9,14 +9,19 @@ const Parser = require("./parser/parser.js");
 
 for (const rozdzial of lekturaNaDzis) {
     for (const tytul of Parser(rozdzial)) {
-        console.log("--------------------------");
-        console.log(tytul);
-        console.log("--------------------------");
+        if (process.stdout.isTTY) {
+            console.log("--------------------------");
+            console.log(tytul);
+            console.log("--------------------------");
 
-        const wersy = biblia[tytul] || [ "error", tytul, "niedostępna w biblia.json" ];
+            const wersy = biblia[tytul] || [ "error", tytul, "niedostępna w biblia.json" ];
 
-        wersy.forEach((wers, i) => {
-            console.log(++i, wers);
-        });
+            wersy.forEach((wers, i) => {
+                console.log(++i, wers);
+            });
+        }
+        else {
+            console.log(tytul, "Redirecting...");
+        }
     }
 }
