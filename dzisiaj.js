@@ -5,9 +5,10 @@
 const biblia = require("./biblia");
 const Today = require('./get-today-date/get-date.js');
 let lekturaNaDzis = require("./kalendarium")[Today()];
-const Parser = require("./parser/parser.js");
+const Parser = require("parser");
 
 for (const rozdzial of lekturaNaDzis) {
+    //console.log(Parser(rozdzial));
     for (const tytul of Parser(rozdzial)) {
         if (process.stdout.isTTY) {
             console.log("--------------------------");
