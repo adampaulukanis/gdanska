@@ -2,17 +2,16 @@
 
 "use strict";
 
-const KSIEGA = process.argv[2];
-//console.log(KSIEGA);
+const TOCHCE = process.argv[2];
 
-if (KSIEGA === undefined) {
-    console.log("USAGE: get.sh Jn1");
+if (TOCHCE === undefined) {
+    console.log("USAGE: get.sh Jan1[:1[-7]]");
     process.exit(1);
 }
 
 const biblia = require("./biblia.json");
 let counter = 0;
 
-for (let wers of biblia[KSIEGA]) {
+for (let wers of biblia[TOCHCE]) {
     console.log(++counter, wers);
 }
