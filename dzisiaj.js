@@ -3,8 +3,8 @@
 "use strict";
 
 const biblia = require("./biblia");
-const Today = require('./get-today-date/get-date.js');
-let lekturaNaDzis = require("./kalendarium")[Today()];
+const MM_DD = require('./get-MM-DD/get-date.js');
+let lekturaNaDzis = require("./kalendarium")[MM_DD()];
 const Parser = require("parser");
 
 for (const rozdzial of lekturaNaDzis) {

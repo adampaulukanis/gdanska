@@ -8,7 +8,9 @@ function test(name, condition, textFail) {
     console.log("--------------------");
 }
 
-test("getDate(2023-03-12) should return 03-12", getDate("2023-03-12") === '03-12', "getDate(2023-03-12) should return 03-12");
+test(
+    "getDate(2023-03-12) should return 03-12",
+    getDate("2023-03-12") === '03-12', "getDate(2023-03-12) should return 03-12");
 
 test("getDate(true) should return something", getDate(true), "Why returned false?");
 
