@@ -15,7 +15,6 @@ function getSkrot(tytul) {
 for (const rozdzial of lekturaNaDzis) {
     for (const tytul of Parser(rozdzial)) {
         let fajnaNazwa = getSkrot(tytul)
-        console.log(fajnaNazwa);
         console.log("--------------------------");
         console.log(`${tytul} [${rozdzial}] ${Skroty[fajnaNazwa]}`);
         console.log("--------------------------");
