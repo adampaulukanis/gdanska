@@ -1,8 +1,16 @@
 {
+    "1Kron": "Pierwsza kronik",
+    "2Kron": "Druga kronik",
+    "Ez": "Ezechiela",
+    "Ezd": "Ezdrasza",
+    "Jr": "Jeremiasza",
+    "Ps": "Psalm",
+    "Tr": "Treny Jeremijaszowe (Lamentacje)",
+    "Ag": "Aggeusza",
+    "Za": "Zachariasza",
+    "Est": "Estery",
+
     "1J": "Pierwszy list Jana",
     "2J": "Drugi list Jana",
-    "3J": "Trzeci list Jana",
-    "Ps": "Psalm",
-    "Ez": "Ezechiela",
-    "Jr": "Jeremiasza"
+    "3J": "Trzeci list Jana"
 }
