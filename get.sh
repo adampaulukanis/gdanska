@@ -2,14 +2,14 @@
 
 "use strict";
 
+const biblia = require("./biblia.json");
 const TOCHCE = process.argv[2];
 
-if (TOCHCE === undefined) {
-    console.log("USAGE: get.sh Jan1[:1[-7]]");
+if (TOCHCE === undefined || biblia[TOCHCE] === undefined) {
+    console.log("USAGE: get.sh Jan1");
     process.exit(1);
 }
 
-const biblia = require("./biblia.json");
 let counter = 0;
 
 for (let wers of biblia[TOCHCE]) {
