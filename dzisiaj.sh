@@ -12,11 +12,16 @@ function getSkrot(tytul) {
     return tytul.split(/([0-9]*[a-zA-Z]+)/u)[1];
 }
 
-for (const rozdzial of lekturaNaDzis) {
-    for (const tytul of Parser(rozdzial)) {
-        let fajnaNazwa = getSkrot(tytul)
+function getRozdzial(tytul) {
+    // 1Kor11 => 11 is interesting
+    return tytul.split(/([0-9]+)$/)[1];
+}
+
+for (const rozdzialy of lekturaNaDzis) {
+    for (const tytul of Parser(rozdzialy)) {
+        let fajnaNazwa = getSkrot(tytul); 
         console.log("--------------------------");
-        console.log(`${tytul} [${rozdzial}] ${Skroty[fajnaNazwa]}`);
+        console.log(`${tytul} ${Skroty[fajnaNazwa]} ${getRozdzial(tytul)}`);        // TODO: update: 1Kor11 Pierwszy Koryntów 11
         console.log("--------------------------");
 
         const wersy = biblia[tytul] || [ "error", tytul, "niedostępna w biblia.json" ];
