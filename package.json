@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-      "parser": "adampaulukanis/parser-do-Biblii"
+    "cheerio": "^1.0.0-rc.12",
+    "parser": "adampaulukanis/parser-do-Biblii"
   },
   "repository": {
     "type": "git",
