@@ -32,7 +32,6 @@ h2 {
 }
 main {
     margin:1em auto;
-    width:90%;
 }
 section {
     background-color:lightblue;
@@ -58,6 +57,7 @@ nav a {
     counter-increment:wers;
     margin-bottom:5px;
 }
+.wersy li:nth-child(odd) {}
 .wersy li:before {
     margin-right:1em;
     content:counter(wers);

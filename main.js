@@ -1,7 +1,11 @@
-const today = '03-17';
+const now = new Date();
+const year = now.getFullYear();
+const month = String(now.getMonth() + 1).padStart(2, "0");
+const day = String(now.getDate()).padStart(2, "0");
+const today = `${month}-${day}`;
 
 $(document).ready(function () {
-    document.querySelector('input#dzisiaj').value = `2024-${today}`;
+    document.querySelector('input#dzisiaj').value = `${year}-${month}-${day}`;
     let jqxhr = $.getJSON('kalendarium.json', function (data) {
         $.each(data[today], function (key, val) {
             $('nav').append(`<a href="#${val}">${val}</a>`);
