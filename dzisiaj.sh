@@ -9,11 +9,12 @@ const Parser = require("parser");
 const Skroty = require("./skroty.json");
 
 function getSkrot(tytul) {
-    return tytul.split(/([0-9]*[a-zA-Z]+)/u)[1];
+    let ret = tytul.split(/([0-9]*\p{L}+)/u)[1];
+    return ret;
 }
 
 function getRozdzial(tytul) {
-    // 1Kor11 => 11 is interesting
+    // 1Kor11 => 11
     return tytul.split(/([0-9]+)$/)[1];
 }
 
