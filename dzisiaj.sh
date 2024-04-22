@@ -21,9 +21,11 @@ function getRozdzial(tytul) {
 for (const rozdzialy of lekturaNaDzis) {
     for (const tytul of Parser(rozdzialy)) {
         let fajnaNazwa = getSkrot(tytul); 
+        console.log();
         console.log("--------------------------");
         console.log(`${tytul} ${Skroty[fajnaNazwa]} ${getRozdzial(tytul)}`);        // TODO: update: 1Kor11 Pierwszy Koryntów 11
         console.log("--------------------------");
+        console.log();
 
         const wersy = biblia[tytul] || [ "error", tytul, "niedostępna w biblia.json" ];
 
