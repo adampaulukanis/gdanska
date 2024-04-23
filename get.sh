@@ -20,7 +20,10 @@ function getRozdzial(tytul) {
     return tytul.split(/([0-9]+)$/)[1];
 }
 let fajnaNazwa = getSkrot(TOCHCE);
+console.log("---------------");
 console.log(TOCHCE, Skroty[fajnaNazwa], getRozdzial(TOCHCE));
+console.log("---------------");
+console.log();
 
 let counter = 0;
 
