@@ -61,9 +61,8 @@ nav a {
     margin-right:1em;
     content:counter(wers);
     background-color:orange;
-    border-radius:50%;
     color:white;
-    width:1.2em;
+    width:2.2em;
     text-align:center;
     display:inline-block;
     font-size:small;
