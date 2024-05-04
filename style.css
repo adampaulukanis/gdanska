@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-    --main-bg-color:white;
+    --main-bg-color:black;
 }
 html {
     font-size:100%;
@@ -46,24 +46,34 @@ nav a {
     border-radius:10%;
 }
 .wersy {
-    list-style:none;
+    /*list-style:none;*/
     counter-reset:wers;
     list-style-position:inside;
     margin:0;
     padding:0;
+
 }
 .wersy li {
-    counter-increment:wers;
+    /*counter-increment:wers;*/
     margin-bottom:5px;
+    font: .6em/2 "Fira Sans", sans-serif;
+}
+.wersy li:hover {
+    background:yellow;
 }
 .wersy li:nth-child(odd) {}
+/* mogę użyć, wydaje mi się, selektora :empty, tylko nie wiem jak */
+.wersy li:empty {}
 .wersy li:before {
     margin-right:1em;
-    content:counter(wers);
+    /*content:counter(wers);*/
     background-color:orange;
     color:white;
     width:2.2em;
     text-align:center;
     display:inline-block;
     font-size:small;
+}
+.test-wers {
+    font-size:large;
 }

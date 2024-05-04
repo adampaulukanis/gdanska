@@ -17,8 +17,11 @@ function inputOneIntoMain(rozdzial){
     $('<section>').attr('id', rozdzial).appendTo('main');
     $('<h2>').text(rozdzial).appendTo(`section#${rozdzial}`);
     let wersy = [];
-    (Biblia[rozdzial]).forEach((el, i, arr) => {
-        wersy.push(`<li>${el}</li>`);
+    let ksiega = Biblia[rozdzial] || [];
+    ksiega.forEach((el, i, arr) => {
+        if (el) {
+            wersy.push(`<li value="${i+1}"><span class="test-wers">${String(el)}</span></li>`);
+        }
     });
     $('<ol>', {
         class: 'wersy',
