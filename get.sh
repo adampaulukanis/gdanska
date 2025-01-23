@@ -25,8 +25,8 @@ console.log(TOCHCE, Skroty[fajnaNazwa], getRozdzial(TOCHCE));
 console.log("---------------");
 console.log();
 
+
 let counter = 0;
 
-for (let wers of biblia[TOCHCE]) {
+for (let wers of biblia[TOCHCE])
     console.log(++counter, wers);
-}
