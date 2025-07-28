@@ -27,6 +27,7 @@ function inputOneIntoMain(rozdzial){
         class: 'wersy',
         html: wersy,
     }).appendTo(`section#${rozdzial}`);
+    $(`section#${rozdzial}`).append(`<a class="up-arrow" href="#top">⇑ idź do góry</a>`);
 }
 
 $(document).ready(function(){

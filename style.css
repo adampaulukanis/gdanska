@@ -77,3 +77,8 @@ nav a {
 .test-wers {
     font-size:large;
 }
+.up-arrow {
+    font-size: 20px;
+    background: yellow;
+    color: blue;
+}
