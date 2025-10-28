@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "parser": "adampaulukanis/parser-do-Biblii"
+    "parser": "github:adampaulukanis/parser-do-Biblii"
   },
   "repository": {
     "type": "git",
